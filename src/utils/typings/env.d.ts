@@ -2,6 +2,13 @@ declare global {
   namespace NodeJS {
     interface ProcessEnv {
       TOKEN: string;
+
+      CSRF_TOKEN: string;
+      COOKIE: string;
+      GUILD_ID: string;
+      NOTIFY_CHANNEL_ID: string;
+      ERROR_CHANNEL_ID: string;
+      DELAY: string;
     }
   }
 }
