@@ -58,7 +58,7 @@ export const checkMonitorAndNotify = async (client: Client) => {
     } catch (error) {
       console.error(error);
 
-      const channel = client.channels.cache.get(process.env.NOTIFY_CHANNEL_ID);
+      const channel = client.channels.cache.get(process.env.ERROR_CHANNEL_ID);
 
       if (channel && channel.isSendable()) {
         if (error instanceof Error)
