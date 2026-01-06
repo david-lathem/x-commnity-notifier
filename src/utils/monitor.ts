@@ -62,7 +62,9 @@ export const checkMonitorAndNotify = async (client: Client) => {
 
       if (channel && channel.isSendable()) {
         if (error instanceof Error)
-          await channel.send(`Error on X Communtiy Scraper (${error.message})`);
+          await channel
+            .send(`Error on X Communtiy Scraper (${error.message})`)
+            .catch(console.error);
       }
 
       await setTimeout(1000 * Number(process.env.DELAY));
