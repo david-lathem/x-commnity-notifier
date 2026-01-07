@@ -63,5 +63,7 @@ export const searchForMemberXApi = async (
 
   const data: CommunityResultsResponse = await res.json();
 
+  if(!data?.data?.communityResults || !data?.data?.communityResults?.result)
+  console.log(data)
   return data.data.communityResults.result.member_relationship_typeahead;
 };
