@@ -63,7 +63,10 @@ export const searchForMemberXApi = async (
 
   const data: CommunityResultsResponse = await res.json();
 
-  if(!data?.data?.communityResults || !data.data.communityResults.result || !data.data.communityResults.result.member_relationship_typeahead)
+  if(!data?.data?.communityResults || !data.data.communityResults.result || !data.data.communityResults.result.member_relationship_typeahead){
+    
   console.log(data)
+    console.log(data?.data?.communityResults.result)
+  }
   return data.data.communityResults.result.member_relationship_typeahead;
 };
